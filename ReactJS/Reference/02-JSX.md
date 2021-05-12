@@ -114,7 +114,7 @@ const element = {
 
 ---
 
-reference : https://ko.reactjs.org/docs/rendering-elements.html
+reference : https://ko.reactjs.org/docs/introducing-jsx.html
 
 
 Descripted by N0FreeLunch
