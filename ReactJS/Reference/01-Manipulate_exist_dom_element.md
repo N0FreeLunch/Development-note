@@ -24,3 +24,11 @@ ReactDOM.render(
 );
 ```
 
+---
+
+---
+
+reference : https://ko.reactjs.org/docs/rendering-elements.html
+
+
+Descripted by N0FreeLunch
