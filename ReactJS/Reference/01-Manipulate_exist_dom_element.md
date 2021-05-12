@@ -26,8 +26,6 @@ ReactDOM.render(
 
 ---
 
----
-
 reference : https://ko.reactjs.org/docs/hello-world.html
 
 
