@@ -59,4 +59,23 @@ const element = <Welcome name="Sara" />;
 - 컴파일이 되면서 Welcome 컴포넌트를 React.createElement 함수가 React-element로 변환하여 불변객체를 만든다.
 
 ### JSX 어트리뷰트 전달
+```
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
 
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+
+
+---
+
+Reference : https://ko.reactjs.org/docs/components-and-props.html
+
+
+Descripted by N0FreeLunch
