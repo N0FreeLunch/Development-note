@@ -53,3 +53,8 @@ setInterval(tick, 1000);
 - 1000ms 주기로 tick 함수를 호출하며 tick 함수는 ```<div id="root"></div>``` 부분에 랜더링을 한다.
 - 이 방식은 ```<div id="root"></div>``` 돔 엘리먼트 안의 innerHTML을 계속 변경 시키는 방식이다.
 - 그런데 리액트는 ReactDOM.render을 여러번 호출해도  ```<div id="root"></div>```안의 innerHTML 전체를 변경시키는 것이 아니라 변경이 이뤄진 reactElement부인 ```<h2>It is {new Date().toLocaleTimeString()}.</h2>``` 이 부분의 돔만 DOM-element에서 변경한다.
+
+
+---
+Reference : https://ko.reactjs.org/docs/hello-world.html
+Descripted by N0FreeLunch
