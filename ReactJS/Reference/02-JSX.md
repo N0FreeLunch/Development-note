@@ -1,6 +1,6 @@
 ## JSX
 
-### 설명
+### JSX 타입
 ```
 const element = <h1>Hello, world!</h1>;
 ```
