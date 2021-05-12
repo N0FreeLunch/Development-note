@@ -4,7 +4,7 @@
 ```
 const element = <h1>Hello, world!</h1>;
 ```
-<h1>Hello, world!</h1> 부분이 JSX이다.
+```<h1>Hello, world!</h1>```부분이 JSX이다.
 
 - 변수에 JSX를 집어 넣을 수 있다.
 - 하지만 브라우저나 노드JS에서 바로 JXS를 로드 할 수는 없다.
