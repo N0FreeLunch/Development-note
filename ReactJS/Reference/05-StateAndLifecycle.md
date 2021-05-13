@@ -116,3 +116,7 @@ ReactDOM.render(
 - DOM-element를 변경하는 사이드 이펙트는 React-element를 생성하는 로직에 전혀 관여하지 않아야 React-element를 생성하는 리액트의 관점에서는 stateless의 속성을 유지하게 된다.
 
 
+---
+Reference : https://ko.reactjs.org/docs/handling-events.html
+
+Descripted by N0FreeLunch
