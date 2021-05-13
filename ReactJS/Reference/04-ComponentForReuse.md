@@ -161,8 +161,12 @@ function withdraw(account, amount) {
 - withdraw는 props를 변경하기 때문에 순수 함수 컴포넌트가 아니다.
 
 
+
 ### 리액트의 원칙
-#### 모든 React 컴포넌트는 자신의 props를 다룰 때 반드시 순수 함수처럼 동작해야 합니다.
+#### 모든 React 컴포넌트는 자신의 props를 다룰 때 반드시 순수 함수처럼 동작해야 한다.
+
+
+
 
 ---
 
