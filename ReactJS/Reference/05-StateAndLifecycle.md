@@ -107,6 +107,9 @@ ReactDOM.render(
 - 컴포넌트가 소멸되면 setInterval 이벤트가 메모리 상에 남아 컨택스트에 의한 클로저로 콜백이 실행이 되기 때문에 컴포넌트 소멸과 동시에 제거 해 줘야 한다.
 
 
+### state의 초기화
+- 
+
 
 
 ### 랜더링이 된다는 것
@@ -115,6 +118,12 @@ ReactDOM.render(
 - React-element라는 객체는 메모리 상에서 할당된 메모리를 변경하는 것이 아니라 새로 영역을 할당하는, 생성을 하는 원리이다.
 - React-element라는 불변 객체를 생성하여 DOM-element를 Mutable 방식으로 조작하는 것이므로 DOM-element를 변경하는 것은 사이드 이펙트이다.
 - DOM-element를 변경하는 사이드 이펙트는 React-element를 생성하는 로직에 전혀 관여하지 않아야 React-element를 생성하는 리액트의 관점에서는 stateless의 속성을 유지하게 된다.
+
+
+
+### 상태 업데이트
+- 리액트 컴포넌트의 로컬 state 변경에 따라서 로컬 render() 함수가 실행되고 출력이 업데이트 됨 
+- state 변경은 자바스크립트 이벤트인 setInterval에 의해 setState 함수를 호출하여 렌더링 됨
 
 
 
