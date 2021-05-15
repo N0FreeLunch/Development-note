@@ -1,6 +1,8 @@
 ### 리액트 컴포넌트의 원칙
 #### 컴포넌트는 자신의 상태 변경에 대해 책임을 져야 한다.
 
+
+
 ### 컴포넌트의 원칙을 지키지 않은 경우
 ```
 function Clock(props) {
@@ -29,6 +31,8 @@ setInterval(tick, 1000);
 - 컴포넌트는 자체적으로 하나의 기능을 담당한다. 마치 순수 함수처럼 컴포넌트는 props를 세팅해서 호출 될 때 하나의 기능을 담당해야 한다. 그리고 이 기능은 외부에 의존적으면 안된다.
 
 
+
+
 ### 컴포넌트의 원칙을 지키도록 변경 해 보자.
 ```
 class Clock extends React.Component {
@@ -55,6 +59,8 @@ ReactDOM.render(
 - 이 상태는 컴포넌트가 생성될 때 constructor에 의해서 date: new Date()로 컴포넌트가 생성된 시점의 값을 저장하고 찍어낸다.
 - 계속적인 컴포넌트 랜더링을 하기 위해서는 생명주기 메서드를 사용해야 한다.
 
+
+
 ### 생명주기 메서드
 - 메서드인 이유는 클래스 컴포넌트 내부의 React.Component로 부터 상속 받은 메서드를 오버라이딩하여 사용하기 때문
 #### componentDidMount()
@@ -62,6 +68,8 @@ ReactDOM.render(
 #### componentWillUnmount()
 - 컴포넌트가 소멸되면서 실행되는 함수
 - 컴포넌트의 소멸이란 더 이상 React-element로 만들어 지지 않는 컴포넌트 상태
+
+
 
 ### 지속적인 랜더링 기능 추가하기 
 #### 컴포넌트의 원칙을 지킨 경우의 코드
@@ -110,12 +118,13 @@ ReactDOM.render(
 - 컴포넌트가 소멸되면 setInterval 이벤트가 메모리 상에 남아 컨택스트에 의한 클로저로 콜백이 실행이 되기 때문에 컴포넌트 소멸과 동시에 제거 해 줘야 한다.
 
 
+
 ### state
 - setState 함수로 state 변수를 변경할 수 있다.
 - 클래스 컴포넌트에서 state는 this.state 클래스의 멤버로 접근을 해야 한다.
 - 랜더링 시키기 위해서는 state를 직접 변경하면 안 된다. 
 ```this.state.comment = 'Hello';```
-- 랜더링 시키기 위해서는 옵저버 패턴을 적용하기 위해 state 변경과 동시에 랜더링을 발동하는 함수를 호출하는 setState 함수로 state를 변경해야 한다. ```this.setState({comment: 'Hello'});```
+- 랜더링 시키기 위해서는 옵저버 패턴을 적용하기 위해 state 변경과 동시에 랜더링을 발동하는 기능을 호출하는 setState 함수로 state를 변경해야 한다. ```this.setState({comment: 'Hello'});```
 - 리액트에서는 state 값을 직접 변경하지 않는 것이 원칙이며 변경할 때는 setState를 통해 랜더링을 통해 변경을 해야 한다. 랜더링 없이 변수에 뭔가 저장하고 싶을 때는 state가 아닌 다른 변수를 사용하도록 한다.
 - setState를 사용하지 않고 state에 직접 값을 할당하는 것은 constructor에서만 해 주는 것이 원칙이다.
 
@@ -176,10 +185,22 @@ this.setState((state, props) => ({
 - 리액트는 여러 setState() 호출을 해도 최종적으로는 단일 업데이트로 한꺼번에 처리 되기 때문에 성능 이슈를 자체적으로 줄이는 특성이 있다.
 
 ### 단방향 데이터 흐름
-- 컴포넌트는 자신의 state를 자식 컴포넌트에 props로 전달할 수 있다.
+- 부모 컴포넌트는 부모 컴포넌트가 포함하고 있는 자식 컴포넌트에 props로 값을 전달할 수 있다.
+- 부모 컴포넌트는 자식 컴포넌트에 데이터를 전달할 수 있으며, 자식 컴포넌트는 부모로 부터 전달된 데이터를 사용할 수 있다.
+
 ```
 <FormattedDate date={this.state.date} />
 ```
+
+```
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+```
+- FormattedDate는 함수 컴포넌트의 props 변수는 부모 컴포넌트로 부터 값을 전달 받지만, 부모 컴포넌트의 어떤 조작으로 인해 값을 넘겨 받았는지는 알 수 없다. (부모 컴포넌트의 state인지 props인지 유저의 입력값인지 알 수 없다.) 
+
+### 캡슐화
+- 부모 컴포넌트는 자식 컴포넌트가 자체적인 상태를 가지고 있는지 없는지 함수 컴포넌트인지 클래스 컴포넌트인지에 관계 없이 동작한다.
 
 
 
