@@ -120,6 +120,44 @@ ReactDOM.render(
 - setState를 사용하지 않고 state에 직접 값을 할당하는 것은 constructor에서만 해 주는 것이 원칙이다.
 
 
+### setState
+```
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      comments: []
+    };
+  }
+```
+- state는 객체 값으로 업데이트 할 수 있다.
+- state 안의 각 변수들은 독립적이다.
+
+#### state 업데이트 병합
+```
+ componentDidMount() {
+    fetchPosts().then(response => {
+      this.setState({
+        posts: response.posts
+      });
+    });
+
+    fetchComments().then(response => {
+      this.setState({
+        comments: response.comments
+      });
+    });
+  }
+```
+- state 안의 객체 내의 멤버로 posts, comments 두 가지가 있지만 위의 코드에서 보듯이 멤버 하나씩 업데이트 할 수 있다.
+```
+{
+   posts: response.posts
+}
+```
+- 위 객체를 업데이트 했다고 해서 state가 위 객체로 덮어 씌워져서 comments가 사라지는 것이 아니라 shallow merge를 통해 업데이트를 시도한 멤버만 업데이트 하는 방식이다.
+
+
 ### 비동기적 상태 업데이트
 - props, state 업데이트는 비동기적이다.
 - this.props와 this.state 값의 변경이 비동기적이므로 상태 변경 이후의 props, state를 만들어 줄 때 이전 props, state 값에 의존해서는 안 된다.
@@ -136,6 +174,14 @@ this.setState((state, props) => ({
 ```
 - setState에 콜백 함수를 달아주면 업데이트 하기 전의 상태를 인자로 리액트에서 알아서 파라메터로 넘겨준다. 이전 상태를 계산할 때는 콜백 함수를 사용해서 넘겨줘야 이전 상태 값을 통한 상태변경을 정확하게 계산 할 수 있다.
 - 리액트는 여러 setState() 호출을 해도 최종적으로는 단일 업데이트로 한꺼번에 처리 되기 때문에 성능 이슈를 자체적으로 줄이는 특성이 있다.
+
+### 단방향 데이터 흐름
+- 컴포넌트는 자신의 state를 자식 컴포넌트에 props로 전달할 수 있다.
+```
+<FormattedDate date={this.state.date} />
+```
+
+
 
 
 ### 랜더링이 된다는 것
