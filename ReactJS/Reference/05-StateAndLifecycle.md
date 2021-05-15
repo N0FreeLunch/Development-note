@@ -216,12 +216,6 @@ function FormattedDate(props) {
 
 
 
-### 상태 업데이트
-- 리액트 컴포넌트의 로컬 state 변경에 따라서 로컬 render() 함수가 실행되고 출력이 업데이트 됨 
-- state 변경은 자바스크립트 이벤트인 setInterval에 의해 setState 함수를 호출하여 렌더링 됨
-
-
-
 
 ---
 Reference : https://ko.reactjs.org/docs/state-and-lifecycle.html
