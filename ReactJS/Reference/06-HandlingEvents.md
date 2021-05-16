@@ -42,3 +42,9 @@ function ActionLink() {
 - ```onclick="console.log('The link was clicked.'); return false"``` 태그에 이벤트를 설정할 때는 return false를 사용하여 디폴트 이벤트 실행을 막을 수 있다. 하지만 리액트에서는 이벤트 기본 동작을 방지하기 위해 반드시 preventDefault를 호출 해 줘야 한다.
 - 매개변수 e는 W3C 명세를 따르므로 브라우저 런타임에 바닐라 자바스크립트의 이벤트로 넘겨진 매개변수와 동일하다.
 
+---
+
+Reference : https://ko.reactjs.org/docs/handling-events.html
+
+
+Descripted by N0FreeLunch
