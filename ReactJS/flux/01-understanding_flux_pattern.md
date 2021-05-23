@@ -15,7 +15,7 @@
 ### 리액트에서의 MVC 패턴
 - 모델 : 리액트에서 데이터를 저장하는 곳은 state이다. state의 데이터를 수정하는 모델은 setState 메서드에 정의된 데이터 변경 방식을 따른다. setState는 데이터를 저장하기 위해서 먼저 생명주기 함수의 절차를 거친 후 업데이트 되기 때문에 데이터 업데이트에 직접적으로 관여하는 부분은 setState 메서드에 정의된 데이터 변경 방식이다. setState(modelFunction)의 형태로 봐야하며 modelFunction이 state의 수정 및 삭제를 담당하는 모델 부분을 일부 정의한 것이다. state의 데이터를 조회하는 것은 ```this.state.데이터```의 방식으로 접근하는 것이다. 삭제하는 방법은 ```this.state.데이터 = null```으로 삭제할 수 있다.
 - 뷰 : render 함수가 모델의 데이터를 받아서 React-element를 만드는 과정이다. React-element를 브라우저의 돔에 랜더링 하는 과정도 뷰에 포함되지만 React-element의 Immutable 레이어와 DOM-element의 mutable 레이어로 나누므로 뷰 내부에서도 두 과정을 별개로 봐야한다. 또한 DOM-element가 생성되는 과정은 소스코드로 개입할 수 있는 영역이 아닌 자동적으로 이뤄지는 영역이기 때문에 전자를 주로 의미한다.
-- 컨트롤러 : state의 상태를 render에 보내는 과정을 의미한다. 리액트의 생명주기 함수인 getDrivedStateFromProp, shouldComponentUpdate, forceUpdate을 통해서 render에 변경된 상태값을 전달 하기 위해 관여하는 모든 과정을 의미한다. 또한 setState를 통해 호출 되는 생명주기 함수들이 state 값을 변경시키는데 관여하는 모든 과정들을 의미하기도 한다.
+- 컨트롤러 : state의 상태를 render에 보내는 과정을 의미한다. render에 변경된 상태값을 전달 하기 위해 관여하는 모든 과정을 의미한다. 또한 setState를 통해 호출 되는 생명주기 함수들이 state 값을 변경시키는데 관여하는 모든 과정들을 의미하기도 한다.
 
 #### MVC 패턴의 뷰는 여러 모델에 따라 업데이트 된다
 - 상위 컴포넌트와 하위 컴포넌트의 관계에서 상위 컴포넌트의 스테이트 변경 이벤트는 하위 컴포넌트를 랜더링하게 한다.
