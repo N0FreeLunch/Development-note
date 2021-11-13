@@ -218,6 +218,5 @@ function FormattedDate(props) {
 
 
 ---
-Reference : https://ko.reactjs.org/docs/state-and-lifecycle.html
-
-Descripted by N0FreeLunch
+## Reference
+- https://ko.reactjs.org/docs/state-and-lifecycle.html
