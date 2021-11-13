@@ -170,7 +170,5 @@ function withdraw(account, amount) {
 
 ---
 
-Reference : https://ko.reactjs.org/docs/components-and-props.html
-
-
-Descripted by N0FreeLunch
+## Reference
+- https://ko.reactjs.org/docs/components-and-props.html
