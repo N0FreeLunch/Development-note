@@ -26,7 +26,5 @@ ReactDOM.render(
 
 ---
 
-reference : https://ko.reactjs.org/docs/hello-world.html
-
-
-Descripted by N0FreeLunch
+## Reference
+- https://ko.reactjs.org/docs/hello-world.html
